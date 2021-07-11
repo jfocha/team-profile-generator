@@ -1,0 +1,26 @@
+{
+  "name": "team-profile-generator",
+  "version": "1.0.0",
+  "description": "Command-line application that takes in information about employees on a software engineering team and generates an HTML webpage that displays summaries for each person.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jfocha/team-profile-generator.git"
+  },
+  "author": "Joseph Focha",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jfocha/team-profile-generator/issues"
+  },
+  "homepage": "https://github.com/jfocha/team-profile-generator#readme",
+  "dependencies": {
+    "inquirer": "^8.1.1",
+    "jest": "^27.0.6"
+  }
+}
