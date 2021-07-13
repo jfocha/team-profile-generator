@@ -19,7 +19,7 @@
   
   ## Installation
   
-    First, be sure to have node.js installed. Second, clone the code in your directory of choice by typing `git clone git@github.com:jfocha/team-profile-generator.git` in terminal. Then, type `npm install` in the terminal.
+  First, be sure to have node.js installed. Second, clone the code in your directory of choice by typing `git clone git@github.com:jfocha/team-profile-generator.git` in terminal. Then, type `npm install` in the terminal.
   
   
   ## Usage 
