@@ -28,11 +28,11 @@ test("gets manager's email value", () => {
     expect(manager.getEmail()).toEqual(expect.stringContaining(manager.email.toString()));
 });
 
-// test("gets manager's officeNumber value", () => {
-//     const manager = new Manager('Joe Manager', '2', 'joemanager@email.com', '1');
+test("gets manager's officeNumber value", () => {
+    const manager = new Manager('Joe Manager', '2', 'joemanager@email.com', '1');
 
-//     expect(manager.getId()).toBeGreaterThanOrEqual(1);
-// });
+    expect(manager.officeNumber).toBeGreaterThanOrEqual(1);
+});
  
 test("gets manager's role", () => {
     const manager = new Manager('Joe Manager', '2', 'joemanager@email.com', '1');
