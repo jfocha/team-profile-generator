@@ -111,7 +111,7 @@ function teamBuilder(teamData) {
                     ).then((input) => {
                         this.engineer = new Engineer(input.engineerName, input.id, input.email, input.gitHub);
                         teamData.push(this.engineer);
-                        console.log(teamData);
+                        // console.log(teamData);
                         return teamBuilder(teamData);
                     })
                     .catch((error) => {

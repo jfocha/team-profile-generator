@@ -2,55 +2,40 @@ const Manager = require('../lib/Manager');
 const Engineer = require('../lib/Engineer');
 const Intern = require('../lib/Intern');
 
-// var teamData = [
-//     Manager {
-//       name: 'Manager One',
-//       id: 1,
-//       email: 'manager@manager.com',
-//       officeNumber: 99
-//     },
-//     Engineer {
-//       name: 'Engineer Two',
-//       id: 2,
-//       email: 'engineer@engineer.com',
-//       github: 'engineerGit'
-//     },
-//     Intern {
-//       name: 'Intern Three',
-//       id: 3,
-//       email: 'intern@intern.com',
-//       school: 'UC Berkeley'
-//     }
-//   ];
-
 const generateCards = teamData => {
-    console.log(teamData);
-    return `
-    
-        ${teamData
-        //   .filter(({ feature }) => feature)
-          .map(({ name, id, email, option }) => {
-            return `
-            <div class="card" style="width: 18rem;">
-            <div class="card-body">
-                <h5 class="card-title">${name}</h5>
-                <h6 class="card-subtitle mb-2">Need Job getRole()</h6>
-            </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">ID: ${id}</li>
-                <li class="list-group-item">Email: ${email}</li>
-                <li class="list-group-item">${option}</li>
-              </ul>
-          </div>
-          
-          `;
-          })
-          .join('')}
-  
 
-        
+    let htmlData = [];
+    let numItems = teamData.length;
+    for (let index = 0; index < numItems; index++) {
       
-    `;
+      let obj = teamData.shift();
+      let role = obj.getRole();
+      let name = obj.getName();
+      let id = obj.getId();
+      let email = "Email: <a href='mailto:" + obj.getEmail() + "'>" + obj.getEmail() + "</a>";
+      if (role === "Manager") {
+        var option = "Office Number: " + obj.officeNumber;
+      } else if (role === "Engineer") {
+        var option = "GitHub: <a href='https://github.com/" + obj.getGithub() + "' target='_blank'>" + obj.getGithub() + "</a>";
+      } else if (role === "Intern") {
+        var option = "School: " + obj.getSchool();
+      }
+
+      htmlData.push(`
+               <div class="card" style="width: 18rem;">
+               <div class="card-body">
+                   <h5 class="card-title">${name}</h5>
+                   <h6 class="card-subtitle mb-2">${role}</h6>
+               </div>
+               <ul class="list-group list-group-flush">
+                   <li class="list-group-item">ID: ${id}</li>
+                   <li class="list-group-item">${email}</li>
+                   <li class="list-group-item">${option}</li>
+                 </ul>
+             </div>
+             `);            
+    }
+    return htmlData.join('');
   };
   
   module.exports = (teamData) => {
